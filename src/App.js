@@ -50,6 +50,17 @@ export class App extends Component {
       items: filteredItems,
     });
   };
+  setUpdate = (text, key) => {
+    const items = this.state.items;
+    items.forEach((item) => {
+      if (item.key === key) {
+        item.text = text;
+      }
+    });
+    this.setState({
+      items: items,
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -66,7 +77,11 @@ export class App extends Component {
             Add
           </button>
         </form>
-        <ListItems items={this.state.items} deleteItem={this.deleteItem} />
+        <ListItems
+          items={this.state.items}
+          deleteItem={this.deleteItem}
+          setUpdate={this.setUpdate}
+        />
       </div>
     );
   }

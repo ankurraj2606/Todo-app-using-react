@@ -5,7 +5,7 @@ body {
   text-align: center;
   background-color: burlywood;
   min-height: 500px;
-  width: 400px;
+  width: 500px;
   margin: 40px auto;
 }
 #to-do-form #todo-ip {
