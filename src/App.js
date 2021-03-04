@@ -2,6 +2,9 @@ import "./App.css";
 
 import React, { Component } from "react";
 import ListItems from "./components/ListItems";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+library.add(faTrash);
 
 export class App extends Component {
   constructor(props) {
@@ -40,6 +43,13 @@ export class App extends Component {
       });
     }
   };
+
+  deleteItem = (key) => {
+    const filteredItems = this.state.items.filter((item) => item.key !== key);
+    this.setState({
+      items: filteredItems,
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -56,7 +66,7 @@ export class App extends Component {
             Add
           </button>
         </form>
-        <ListItems items={this.state.items} />
+        <ListItems items={this.state.items} deleteItem={this.deleteItem} />
       </div>
     );
   }
