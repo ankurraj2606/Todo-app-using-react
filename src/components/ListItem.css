@@ -1,0 +1,12 @@
+.list {
+  color: green;
+  background-color: yellow;
+  height: 50px;
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 5px;
+  text-align: center;
+}
+.list p {
+  padding: 10px;
+}
